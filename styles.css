@@ -173,6 +173,128 @@ body {
 .micro-bravery-graphic {
     max-width: 520px;
 }
+
+/* Conflict Management */
+.conflict-reflection {
+    background: linear-gradient(135deg, #fdf8f3 0%, #ffffff 55%);
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: var(--card-shadow);
+}
+
+.conflict-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.conflict-heading {
+    flex: 1;
+    min-width: 260px;
+}
+
+.conflict-heading h3 {
+    margin-bottom: 8px;
+}
+
+.conflict-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.conflict-tag {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(227, 125, 0, 0.12);
+    color: var(--accent-blue);
+    letter-spacing: 0.02em;
+}
+
+.conflict-tag.fox {
+    background: rgba(0, 122, 255, 0.12);
+    color: #0050a4;
+}
+
+.conflict-tag.bear {
+    background: rgba(52, 199, 89, 0.12);
+    color: #1c7c3a;
+}
+
+.conflict-intro {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.conflict-style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.conflict-style-card {
+    background: var(--background-white);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    min-height: 220px;
+}
+
+.style-rank {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 16px;
+    background: var(--background-gray);
+    color: var(--primary-text);
+}
+
+.style-rank.rank-1 {
+    background: var(--accent-blue);
+    color: #fff;
+}
+
+.style-rank.rank-2 {
+    background: rgba(227, 125, 0, 0.2);
+    color: var(--accent-blue);
+}
+
+.style-rank.rank-3 {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.style-rank.rank-4 {
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    background: transparent;
+}
+
+.style-rank.rank-5 {
+    border: 2px dashed rgba(0, 0, 0, 0.15);
+    background: transparent;
+    color: var(--secondary-text);
+}
+
+.conflict-style-card h4 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.conflict-style-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--primary-text);
+}
 .section-title {
     font-size: 48px;
     font-weight: 700;
