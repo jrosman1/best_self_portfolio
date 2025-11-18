@@ -92,19 +92,14 @@ body {
     padding: 120px 24px 100px;
     position: relative;
     overflow: hidden;
-    background-image:
-        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 70%, #ffffff 100%),
-        url('images/header_splash.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('images/header_splash.jpg') center/cover no-repeat;
 }
 
 #hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 85%, #ffffff 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.55) 70%, #ffffff 95%);
     pointer-events: none;
 }
 
@@ -113,14 +108,15 @@ body {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    max-width: 720px;
-    margin: 0 auto;
+    align-items: flex-end;
+    text-align: left;
+    gap: 24px;
+    max-width: 700px;
+    margin-left: auto;
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 28px;
     padding: 32px;
     backdrop-filter: blur(10px);
@@ -229,8 +225,8 @@ body {
 }
 
 .headshot {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -240,8 +236,8 @@ body {
 }
 
 .interview-photo {
-    width: 120px;
-    height: 120px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
