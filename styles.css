@@ -1,0 +1,642 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text: #1d1d1f;
+    --secondary-text: #6e6e73;
+    --accent-blue: #0071e3;
+    --accent-blue-hover: #0077ed;
+    --background-white: #ffffff;
+    --background-gray: #f5f5f7;
+    --border-gray: #d2d2d7;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--primary-text);
+    line-height: 1.6;
+    background-color: var(--background-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--border-gray);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+}
+
+.nav-logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-text);
+    letter-spacing: -0.02em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-menu a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    opacity: 0.8;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+    color: var(--accent-blue);
+}
+
+/* Hero Section */
+#hero {
+    margin-top: 48px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+    text-align: center;
+    padding: 80px 24px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    color: var(--primary-text);
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: var(--secondary-text);
+    font-weight: 400;
+}
+
+/* Sections */
+.section {
+    padding: 100px 24px;
+    background-color: var(--background-white);
+}
+
+.section-alt {
+    background-color: var(--background-gray);
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+    color: var(--primary-text);
+    text-align: center;
+}
+
+/* Content Blocks */
+.content-block {
+    margin-bottom: 48px;
+}
+
+.content-block h3 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    margin-top: 40px;
+    color: var(--primary-text);
+}
+
+.content-block h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 32px;
+    color: var(--primary-text);
+}
+
+.content-block p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+
+.content-block p strong {
+    font-weight: 600;
+}
+
+/* Interview Cards */
+.interview-card {
+    background: var(--background-white);
+    border-radius: 18px;
+    padding: 48px;
+    margin-bottom: 40px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.interview-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.interview-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--primary-text);
+}
+
+.interview-role {
+    font-size: 19px;
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+.interview-content h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: var(--accent-blue);
+}
+
+.interview-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+
+blockquote {
+    background: var(--background-gray);
+    border-left: 4px solid var(--accent-blue);
+    padding: 24px 32px;
+    margin: 32px 0;
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--primary-text);
+    line-height: 1.7;
+}
+
+/* Assessment Blocks */
+.assessment-block {
+    margin-bottom: 64px;
+}
+
+.assessment-block h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--primary-text);
+}
+
+.assessment-subtitle {
+    font-size: 19px;
+    color: var(--secondary-text);
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.personality-traits {
+    display: grid;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.trait {
+    background: var(--background-white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trait:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.trait h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--accent-blue);
+}
+
+.trait p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    margin-bottom: 16px;
+}
+
+/* Leadership Theory */
+.theory-intro,
+.theory-core,
+.theory-model,
+.theory-research,
+.theory-connections,
+.theory-application,
+.theory-limitations {
+    margin-bottom: 64px;
+}
+
+.theory-intro h3,
+.theory-core h3,
+.theory-model h3,
+.theory-research h3,
+.theory-connections h3,
+.theory-application h3,
+.theory-limitations h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary-text);
+}
+
+.theory-intro p,
+.theory-core p,
+.theory-model p,
+.theory-research p,
+.theory-connections p,
+.theory-application p,
+.theory-limitations p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+    padding: 24px 32px;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.6;
+    border-left: 4px solid var(--accent-blue);
+    margin: 32px 0;
+}
+
+.micro-bravery-examples {
+    background: var(--background-white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin-top: 32px;
+}
+
+.micro-bravery-examples h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--primary-text);
+}
+
+.micro-bravery-examples ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.micro-bravery-examples li {
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 12px 0;
+    padding-left: 32px;
+    position: relative;
+    color: var(--primary-text);
+}
+
+.micro-bravery-examples li:before {
+    content: "•";
+    color: var(--accent-blue);
+    font-size: 24px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+/* Model Steps */
+.model-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.model-step {
+    background: var(--background-white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: var(--accent-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.model-step h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary-text);
+}
+
+.model-step p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    text-align: left;
+}
+
+.model-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--secondary-text);
+    font-size: 17px;
+    margin-top: 32px;
+}
+
+/* Theory Comparison */
+.theory-comparison {
+    margin: 32px 0;
+}
+
+.theory-comparison p {
+    background: var(--background-white);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--border-gray);
+    transition: border-color 0.3s ease;
+}
+
+.theory-comparison p:hover {
+    border-left-color: var(--accent-blue);
+}
+
+/* Application Sections */
+.application-section {
+    background: var(--background-white);
+    padding: 24px 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--card-shadow);
+}
+
+.application-section h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--accent-blue);
+}
+
+.application-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.application-section li {
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--primary-text);
+}
+
+.application-section li:before {
+    content: "→";
+    color: var(--accent-blue);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+/* Growth Section */
+.growth-commitment,
+.growth-reflection,
+.growth-plan,
+.growth-impact,
+.growth-progress {
+    margin-bottom: 64px;
+}
+
+.growth-commitment h3,
+.growth-reflection h3,
+.growth-plan h3,
+.growth-impact h3,
+.growth-progress h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--primary-text);
+}
+
+.growth-commitment p,
+.growth-reflection p,
+.growth-plan p,
+.growth-impact p,
+.growth-progress p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+
+.plan-item {
+    background: var(--background-white);
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.plan-item h4 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--accent-blue);
+}
+
+.plan-item p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--primary-text);
+}
+
+.plan-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 16px;
+}
+
+.plan-item li {
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--primary-text);
+}
+
+.plan-item li:before {
+    content: "✓";
+    color: var(--accent-blue);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-gray);
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border-gray);
+}
+
+footer p {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .interview-card {
+        padding: 32px 24px;
+    }
+
+    .model-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .content-block h3 {
+        font-size: 24px;
+    }
+
+    .theory-intro h3,
+    .theory-core h3,
+    .growth-commitment h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .interview-card {
+        padding: 24px 20px;
+    }
+
+    blockquote {
+        padding: 20px 24px;
+    }
+}
