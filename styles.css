@@ -968,6 +968,40 @@ blockquote {
     font-weight: 600;
 }
 
+/* References */
+.References {
+    margin-top: 48px;
+    padding: 32px;
+    border-radius: 20px;
+    background: var(--background-gray);
+    box-shadow: var(--card-shadow);
+}
+
+.References h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--secondary-text);
+    margin-bottom: 16px;
+}
+
+.reference-list {
+    margin-left: 20px;
+    color: var(--primary-text);
+    line-height: 1.7;
+}
+
+.reference-list li {
+    margin-bottom: 12px;
+}
+
+.citation {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-left: 4px;
+}
+
 /* Footer */
 footer {
     background-color: var(--background-gray);
