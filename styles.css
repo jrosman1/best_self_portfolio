@@ -88,34 +88,45 @@ body {
 /* Hero Section */
 #hero {
     margin-top: 48px;
-    min-height: 70vh;
-    background: radial-gradient(circle at top left, rgba(227, 125, 0, 0.12), #ffffff 45%);
-    padding: 120px 24px 80px;
+    min-height: 80vh;
+    padding: 120px 24px 100px;
     position: relative;
     overflow: hidden;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 70%, #ffffff 100%),
+        url('images/header_splash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#hero:after {
+#hero::after {
     content: "";
     position: absolute;
-    width: 320px;
-    height: 320px;
-    background: rgba(227, 125, 0, 0.08);
-    border-radius: 50%;
-    right: -80px;
-    top: -160px;
-    filter: blur(20px);
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 85%, #ffffff 100%);
+    pointer-events: none;
 }
 
 .hero-grid {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 48px;
-    align-items: center;
-    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 720px;
     margin: 0 auto;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 28px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
 }
 
 .hero-text {
@@ -154,19 +165,8 @@ body {
     font-weight: 600;
 }
 
-.hero-media {
-    position: relative;
-}
-
 .hero-stat-card {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-    background: var(--background-white);
-    padding: 20px 24px;
-    border-radius: 18px;
-    box-shadow: var(--card-shadow);
-    max-width: 240px;
+    padding: 24px 28px;
 }
 
 .hero-stat-card h4 {
@@ -997,16 +997,6 @@ footer p {
 
     .hero-text h1 {
         font-size: 40px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-stat-card {
-        position: static;
-        margin-top: 24px;
-        max-width: 100%;
     }
 
     .hero-subtitle {
